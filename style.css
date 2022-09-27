@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-areas: "head nav" "main" "foot";
+  grid-template-rows: auto 1fr auto;
+  /* grid-auto-columns: max-content; */
+}
+header {
+  padding: 10px;
+}
+header > img {
+  display: block;
+  grid-area: "head";
+  margin: auto;
+  width: 100px;
+}
+nav {
+  grid-area: "nav";
+  border-bottom: 1px solid #eee;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+nav li:hover {
+  border-bottom: 1px solid black;
+}
+nav li:hover a {
+  color: black;
+}
+.active {
+  border-bottom: 1px solid black;
+}
+.active a {
+  color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: gray;
+}
+main {
+  grid-area: "main";
+}
+.banner {
+  background-color: aquamarine;
+  background-image: url("./images/White\ Clean\ Jewelry\ Landscape\ Banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10vh 5vw;
+}
+.banner > h3 {
+  font-size: 20px;
+  font-weight: 500;
+  animation-name: slidein;
+  animation-duration: 3s;
+}
+.banner > h3 > em {
+  font-weight: 600;
+  font-size: 50px;
+  transition: all 0.3s ease-in;
+}
+.banner > button {
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  font-style: oblique;
+  animation-name: slideup;
+  animation-duration: 10s;
+  cursor: pointer;
+  border: none;
+}
+.banner > button:hover {
+  background-color: rgb(255, 170, 0);
+}
+.articles {
+  padding: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.articles > article {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 15px;
+  flex: 1;
+}
+.articles > article:hover {
+  border-color: black;
+}
+.articles > article > p {
+  text-align: left;
+  text-overflow: clip;
+  margin-top: 10px;
+}
+.articles > article > img {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.articles > article > button {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+.articles > article > button:hover {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+footer {
+  grid-area: "foot";
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+footer img {
+  width: 200px;
+}
+footer p {
+  color: white;
+  font-style: italic;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes slideup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
